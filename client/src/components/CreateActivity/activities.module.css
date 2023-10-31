@@ -1,0 +1,46 @@
+.delete{
+    block-size: 25px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    margin: 3px;
+}
+
+.listCon{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.formContainer{
+    display: flex;
+    justify-items: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    justify-self: center;
+}
+
+.labelContainer{
+    display: grid;
+    align-items: center;
+    justify-items: start;
+}
+
+.label{
+    grid-column: 1;
+}
+.input{
+    grid-column: 2;
+}
+.error{
+    grid-column: 3;
+}

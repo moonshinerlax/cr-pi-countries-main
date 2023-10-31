@@ -1,0 +1,31 @@
+.cardcontainer{
+    display: grid;
+    justify-content: center;
+    margin: 40px;
+
+}
+
+.cardcontainer img {
+    grid-column: 1;
+    grid-row: 2;
+    inline-size: 180px;
+}
+
+.name{
+    justify-self: center;
+    grid-row: 3;
+    grid-column: 1;
+    font-size: large;
+    margin: 0px;
+    inline-size: 150px;
+    overflow-wrap: normal;
+}
+
+.continent{
+    grid-row: 1;
+    grid-column: 1;
+    font-size: larger;
+    margin: -3px;
+    justify-self: flex-start;
+}
+

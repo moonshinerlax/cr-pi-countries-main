@@ -1,0 +1,42 @@
+.rootHome {
+    opacity: 0; 
+  }
+  
+  
+  .slideIn {
+    
+    transform: translateX(0); 
+    opacity: 1; 
+    transition: transform .5s ease-in, opacity .5s ease-in; 
+  }
+
+  .pageNav{
+    display: flex;
+    grid-row: 1;
+    grid-column: 3;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .searchBar{
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .head{
+    display: grid;
+    justify-items: stretch;
+    grid-gap: 20px;
+  }
+
+  .filters{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .pageNum{
+    margin: 5px;
+    text-decoration: underline;
+  }
