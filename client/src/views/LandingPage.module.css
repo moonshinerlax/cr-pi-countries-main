@@ -25,4 +25,9 @@
 
   .content{
     position: relative;
-  }
+    display: grid;
+    margin: 50px;
+    padding: 20px;
+    justify-items: center;
+}
+  

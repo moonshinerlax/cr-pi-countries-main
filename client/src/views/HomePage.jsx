@@ -20,6 +20,8 @@ const HomePage = ()=>{
     const [searchStatus, setSearchStatus] = useState(false)
     const itemsNum = items.length
    
+   
+
     useEffect(()=>{
       dispatch(fillList())
     },[])

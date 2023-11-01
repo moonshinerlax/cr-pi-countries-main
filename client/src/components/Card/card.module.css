@@ -2,30 +2,34 @@
     display: grid;
     justify-content: center;
     margin: 40px;
-
+    width: 192px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px rgb(0,0,0,0.5);
+    cursor: pointer;
 }
 
 .cardcontainer img {
     grid-column: 1;
     grid-row: 2;
-    inline-size: 180px;
+    width: 192px;
+    border-top: solid 1px rgb(0,0,0,0.1);
+    border-bottom: solid 1px rgb(0,0,0,0.1);
 }
 
 .name{
-    justify-self: center;
-    grid-row: 3;
+    grid-row: 1;
     grid-column: 1;
     font-size: large;
-    margin: 0px;
-    inline-size: 150px;
+    margin: 0;
+    margin-left: 10px;
     overflow-wrap: normal;
 }
 
 .continent{
-    grid-row: 1;
+    grid-row: 3;
     grid-column: 1;
     font-size: larger;
-    margin: -3px;
-    justify-self: flex-start;
+    margin: 0px;
+    margin-left: 10px;
 }
 

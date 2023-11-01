@@ -5,7 +5,7 @@ import Card from '../Card/card'
 import style from "./Cards.module.css"
 
 const Cards = ({countries}) => {
-    
+
   return (
     <div className={style.container}>
         {countries.map((country) => 

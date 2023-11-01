@@ -43,6 +43,14 @@ h1 {
   line-height: 1.1;
 }
 
+h2{
+  margin: 10px;
+  align-self: center;
+  justify-self: center;
+}
+h3{
+  margin: 0px;
+}
 
 
 /* CSS */
@@ -132,16 +140,17 @@ button:disabled {
 input{
   width: 200px;
   height: 29px;
-  border: none;
+  border: 1px white;
   outline: none;
   margin: 10px;
   caret-color: rgb(255, 81, 0);
   background-color: rgb(255, 255, 255);
-  border-radius: 30px;
+  border-radius: 5px;
   padding-left: 15px;
   letter-spacing: 0.8px;
   color: rgb(19, 19, 19);
   font-size: 13.4px;
+  box-shadow: 0 1px 3px 0px #9098A9;
 }
 input::shadow{
   width: 210px;
