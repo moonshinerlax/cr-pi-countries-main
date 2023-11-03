@@ -1,33 +1,44 @@
 .landingRoot{
-    position: absolute;
-    background-image: url(../images/top-view-magnifying-glass-compass.jpg);
+    position: fixed;
+    align-items: baseline;
+    justify-content: center;
+    background-image: url(../images/5a65ee278cd557143f05a4ba91abbfa8.gif);
     background-size: cover;
-    top: 0;
-    left: 0;
+    filter: hue-rotate(45deg);
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 9999;
+    transform: translate3d(0,0,0);
+    transition: opacity .5s ease-in-out, transform 1s cubic-bezier(0,0,1,1);
   }
   
-  .slideOut {
-    animation: slide-out .5s ease-out forwards;
+  .slideOut1 {
+    animation: slide-out 1s ease-out forwards;
+    transform: translate3d(200%,0,0);
+    opacity: 0;
   }
   
-  @keyframes slide-out {
+  /* @keyframes slide-out {
     to {
       transform: translateX(-100%);
       opacity: 0;
     }
-  }
+  } */
 
   .content{
     position: relative;
-    display: grid;
     margin: 50px;
+    display: flex;
     padding: 20px;
     justify-items: center;
-}
+    transform: translate3d(0,0,0);
+    transition: transform 1s cubic-bezier(0,0,1,1);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
   
+  .slideOut {
+    animation: slide-out 1s ease-out forwards;
+    transform: translate3d(-600%,0,0);
+  }

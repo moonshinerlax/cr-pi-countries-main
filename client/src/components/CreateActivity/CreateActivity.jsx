@@ -1,9 +1,14 @@
-import { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react'
 import validateActivityData from './validateActivityData'
 import axios from 'axios'
 import style from "./activities.module.css"
+import PopOutWindow from '../PopOutWindow/PopOutWindow'
 
 const CreateActivity = () => {
+    const [transition, setTransition] = useState(false)
+    const [popOutWindow, setPopOutWindow] = useState(false);
+    const [popMessage, setPopMessage] = useState('')
     const [countries, setCountries] = useState([])
     const [countryInput, setCountryInput] = useState("")
     const [activityData, setActivityData] = useState({
@@ -21,17 +26,28 @@ const CreateActivity = () => {
         countries:"",
     })
 
+    useEffect(() => {
+        setTimeout(()=>{
+            setTransition(true)
+        }, 100)
+        validateActivityData({ ...activityData, countries: countries }, errors, setErrors);
+      }, [countries]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            if(!activityData.name || !activityData.difficulty||!activityData.duration||!activityData.season||!activityData.countries){
-                throw new Error("Please fill the missing fields")
+            if(!activityData.name || !activityData.difficulty||!activityData.duration||!activityData.season||activityData.countries.length === 0){
+                throw new Error("Please fill the missing fields!")
+            }
+            if (/\d/.test(activityData.name)){
+                throw new Error("Choose a valid name!")
             }
           const response = await axios.post('http://localhost:3001/activities', activityData);
-          window.alert(response);
+          setPopMessage(`Activity ${response.data.name} has been added sucessfully!`);
+          openPopOut()
         } catch (error) {
-          console.log(error);
+          setPopMessage(error.message);
+          openPopOut()
         }
       };
 
@@ -45,27 +61,36 @@ const CreateActivity = () => {
     const handleCountryChange = (event) => {
         const newCountry = event.target.value;
         setCountryInput(newCountry);
-        validateActivityData({...activityData, countries: newCountry }, errors, setErrors);
       };
 
       const handleAddCountry = () => {
         if (countryInput.trim() !== '' && !countries.includes(countryInput)) { 
             setActivityData({ ...activityData, countries: [...countries, countryInput] })
             setCountries([...countries, countryInput]);
-            console.log(activityData)
-        }
-      };
+            setCountryInput("")
+            
+        } else{validateActivityData({...activityData, countries: countries }, errors, setErrors);}
+    };
 
       const handleDelete = (event) => {
         const value = event.target.id;
         const updatedCountries = countries.filter((country) => country !== value);
         setActivityData({ ...activityData, countries: updatedCountries })
         setCountries(updatedCountries);
-        console.log(activityData)
+        
       }
+
+      const openPopOut = () => {
+        setPopOutWindow(true);
+        console.log(popMessage)
+      };
+
+      const closePopOut = () => {
+        setPopOutWindow(false);
+      };
     
   return (
-    <form className={style.formContainer} onSubmit={handleSubmit}>
+    <form className={`${style.formContainer} ${transition ? style.slideIn : ""}`} onSubmit={handleSubmit}>
                 <h1 className={style.title}>Activity Creation</h1>
             <div className={style.labelContainer}>
                 <label className={style.label} htmlFor='name'>Activity Name</label>
@@ -73,7 +98,7 @@ const CreateActivity = () => {
                 <span className={style.error} >{errors.name}</span>
             
                 <label className={style.label} htmlFor='difficulty'>Assign difficulty</label>
-                <input className={style.input} type='number'  min="0" max="5" name='difficulty' value={activityData.difficulty} onChange={handleOnChange}></input>
+                <input className={style.input} type='number'  min="1" max="5" name='difficulty' value={activityData.difficulty} onChange={handleOnChange}></input>
                 <span className={style.error}>{errors.difficulty}</span>
             
                 <label className={style.label} htmlFor='duration'>Duration</label>
@@ -92,7 +117,8 @@ const CreateActivity = () => {
                      
                     <label className={style.label} htmlFor='countries'>Country</label>
                         <input 
-                        className={style.input}  
+                        className={style.input}
+                        value={countryInput}  
                         type="text"
                         name="countries"
                         onChange={handleCountryChange}
@@ -110,6 +136,13 @@ const CreateActivity = () => {
             </div>
             <div>
             <button type="submit" >Create</button>
+            </div>
+            <div>
+                <PopOutWindow
+                    isOpen={popOutWindow}
+                    onClose={closePopOut}
+                    message={popMessage}
+                />
             </div>
         </form>
   )

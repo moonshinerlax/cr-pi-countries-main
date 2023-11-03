@@ -5,8 +5,13 @@
     height: 48px;
     width: 100%;
     box-shadow: 0px 3px 4px rgb(0,0,0,0.3);
-    background-color: white;
+    background-color: rgb(255 219 41);
+    /* background: rgb(36 56 78); */
+    background: linear-gradient(0deg, rgba(121, 255, 63,1) 0%, rgba(255, 255, 255, 1) 75%);
     z-index: 1;
     position: fixed;
 }
 
+.svg{
+    block-size: 35px;
+}

@@ -7,6 +7,9 @@
     box-shadow: 0px 0px 6px rgb(0,0,0,0.5);
     cursor: pointer;
 }
+.cardcontainer:hover{
+    box-shadow: 0px 0px 6px rgba(121, 255, 63,1)
+}
 
 .cardcontainer img {
     grid-column: 1;
@@ -33,3 +36,6 @@
     margin-left: 10px;
 }
 
+.detail{
+    color: antiquewhite;
+}

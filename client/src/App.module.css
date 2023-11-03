@@ -5,7 +5,9 @@
     justify-items: center;
 }
 
-
+.filter{
+  filter: hue-rotate(45deg);
+}
 
 
 

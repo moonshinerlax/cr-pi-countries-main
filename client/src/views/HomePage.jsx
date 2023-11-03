@@ -19,20 +19,26 @@ const HomePage = ()=>{
     const [updateOrd, setUpdateOrd] = useState("")
     const [searchStatus, setSearchStatus] = useState(false)
     const itemsNum = items.length
-   
-   
 
     useEffect(()=>{
       dispatch(fillList())
+      return ()=>{
+        console.log("unmounting")
+        setTransition(false)
+      }
     },[])
 
     useEffect(() => {
+      console.log("mounting")
         setTimeout(() => {
           setTransition(true);
-        }, .5); 
+        }, 0); 
         dispatch(filter(page, filterBar))
-      }, [page, filterBar, updateOrd, searchStatus]); 
+        
+      }
+      , [page, filterBar, updateOrd, searchStatus]); 
       
+
   const handlePageChange = (selectedPage) => {
     setPage(selectedPage);
   };
@@ -62,9 +68,10 @@ const HomePage = ()=>{
         setSearchStatus(false)
       }
       
+      
 
       return(
-        <div className={`${style.rootHome} ${transition ? style.slideIn : ""}`}>
+        <div className={`${style.rootHome} ${transition ? style.slideIn : style.slideOut}` }>
             <div className={style.head}>
               <div className={style.filters}>
                 <FilterBar 
@@ -90,7 +97,8 @@ const HomePage = ()=>{
                   {page >= itemsNum/10 ? <a></a> : <button onClick={nextPage}>Next</button>}
               </div>
             </div>
-            <Cards countries={Countries}/>
+            <Cards countries={Countries}
+            /> 
         </div>
     )
 }

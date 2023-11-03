@@ -1,9 +1,9 @@
 const validateActivityData = (form, errors, setErrors) => {
     let updatedErrors = { ...errors };
-  
+    
     if (!form.name) {
       updatedErrors.name = 'Assign a name';
-    } else if (!/\d/.test(form.name)) {
+    } else if (/\d/.test(form.name)) {
       updatedErrors.name = 'Invalid Name';
     } else {
       updatedErrors.name = '';
@@ -23,12 +23,18 @@ const validateActivityData = (form, errors, setErrors) => {
       updatedErrors.duration = '';
     }
   
+    if(form.season === ""){
+      updatedErrors.season = "Choose a Season"
+      
+    }else{updatedErrors.season = ""}
+  
     if (form.countries.length === 0) { 
       updatedErrors.countries = 'Assign at least one Country';
+      
     } else {
       updatedErrors.countries = '';
+      
     }
-  
     setErrors(updatedErrors);
   }
   
