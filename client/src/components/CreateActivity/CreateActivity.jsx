@@ -29,9 +29,14 @@ const CreateActivity = () => {
     useEffect(() => {
         setTimeout(()=>{
             setTransition(true)
-        }, 100)
+        },0)
         validateActivityData({ ...activityData, countries: countries }, errors, setErrors);
-      }, [countries]);
+            return ()=>{
+                setTransition(false)
+                
+                setTimeout(()=>{console.log(transition)},5000)
+            }
+    }, [countries]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -90,7 +95,7 @@ const CreateActivity = () => {
       };
     
   return (
-    <form className={`${style.formContainer} ${transition ? style.slideIn : ""}`} onSubmit={handleSubmit}>
+    <form className={`${style.formContainer} ${transition ? style.slideIn : style.slideOut}`} onSubmit={handleSubmit}>
                 <h1 className={style.title}>Activity Creation</h1>
             <div className={style.labelContainer}>
                 <label className={style.label} htmlFor='name'>Activity Name</label>

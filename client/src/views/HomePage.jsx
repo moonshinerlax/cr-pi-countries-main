@@ -22,10 +22,10 @@ const HomePage = ()=>{
 
     useEffect(()=>{
       dispatch(fillList())
-      return ()=>{
-        console.log("unmounting")
-        setTransition(false)
-      }
+      // return ()=>{
+      //   console.log("unmounting")
+      //   setTransition(false)
+      // }
     },[])
 
     useEffect(() => {
