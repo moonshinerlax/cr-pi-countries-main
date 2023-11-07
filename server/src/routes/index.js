@@ -33,7 +33,7 @@ router.get("/countries/name", async (req, res)=>{
 router.get("/countries/:idPais", async(req, res)=>{
     try {
         const {idPais} = req.params;
-        console.log(idPais)
+        
     const country = await getCountryById(idPais)
     res.status(200).json(country)    
     } catch (error) {

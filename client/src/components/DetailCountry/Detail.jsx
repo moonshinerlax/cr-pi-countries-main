@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
+//* Libraries Import
 import { useEffect, useState } from "react"
-// import { useParams } from "react-router-dom"
 import axios from "axios"
+//* CSS import
 import style from "./Detail.module.css"
 
 
 const Detail = ({id, onClose}) => {
     const [country, setCountry] = useState("")
     const [activities, setActivities] = useState("")
-    // const {id} = useParams()
 
 useEffect(()=>{
     axios(`http://localhost:3001/countries/${id}`)

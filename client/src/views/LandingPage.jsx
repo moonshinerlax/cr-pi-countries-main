@@ -1,7 +1,10 @@
-import PATHROUTES from "../helpers/PATHROUTES";
+//* labraries import
 import { useNavigate } from "react-router-dom";
-import style from "./LandingPage.module.css"
 import { useState } from "react";
+//* helpers import
+import PATHROUTES from "../helpers/PATHROUTES";
+//* CSS import
+import style from "./LandingPage.module.css"
 
 const LandingPage = ()=>{
     const [transition, setTransition] = useState(false)

@@ -1,12 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+//* libraries imports
 import {useDispatch, useSelector} from "react-redux"
 import { useEffect, useState } from "react";
+//* CSS style imports
 import style from "./HomePage.module.css"
+//* component imports
 import Cards from "../components/Cards/Cards";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Pagination from "../helpers/pagination";
 import FilterBar from "../components/Bars/FilterBar";
 import OrderBar from "../components/Bars/OrderBar";
+//* functions import
 import { fillList, filter } from "../redux/actions";
 
 const HomePage = ()=>{
@@ -22,14 +26,10 @@ const HomePage = ()=>{
 
     useEffect(()=>{
       dispatch(fillList())
-      // return ()=>{
-      //   console.log("unmounting")
-      //   setTransition(false)
-      // }
     },[])
 
     useEffect(() => {
-      console.log("mounting")
+      
         setTimeout(() => {
           setTransition(true);
         }, 0); 
@@ -68,10 +68,8 @@ const HomePage = ()=>{
         setSearchStatus(false)
       }
       
-      
-
       return(
-        <div className={`${style.rootHome} ${transition ? style.slideIn : style.slideOut}` }>
+        <div className={`${style.rootHome} ${transition ? style.slideIn : ""}` }>
             <div className={style.head}>
               <div className={style.filters}>
                 <FilterBar 
@@ -81,8 +79,7 @@ const HomePage = ()=>{
                   sendData={updateOrder}
                   />
               </div>
-                <SearchBar 
-                  
+                <SearchBar             
                   onSearch={handleSearch}
                   onClear={handleClear}
                   searchStatus={searchStatus}

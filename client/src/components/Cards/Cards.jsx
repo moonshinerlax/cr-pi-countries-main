@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-//* Component Imports
+//* Libraries Import
 import { useState } from 'react'
+//* Component Imports
 import Card from '../Card/card'
+import Detail from '../DetailCountry/Detail'
 //* CSS Imports
 import style from "./Cards.module.css"
-import Detail from '../DetailCountry/Detail'
 
 const Cards = ({countries}) => {
   

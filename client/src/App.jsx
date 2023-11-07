@@ -1,4 +1,4 @@
-//* Frameworks Import
+//* Libraries Import
 import { Routes, Route, useLocation } from 'react-router-dom'
 //* CSS Import
 import style from "./App.module.css"

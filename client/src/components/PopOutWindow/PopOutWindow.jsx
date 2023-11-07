@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+//* CSS import
 import style from './PopOutWindow.module.css'; 
 
 const PopOutWindow = ({ isOpen, onClose, message }) => {

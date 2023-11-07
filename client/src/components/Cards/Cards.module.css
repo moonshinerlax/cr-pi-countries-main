@@ -19,17 +19,10 @@
     opacity: 0;
     left: -50%;
     right: -50%;
-    /* transform: translateY(100%); */
     transition: top .3s ease-in-out, opacity .3s ease-in-out;
-  
-   
   
   }
   .detail.open {
-    /* width: -webkit-fill-available;
-    height: -webkit-fill-available; */
-   
     top:0;
     opacity: 1;
-    /* transform: translateY(0); */
   }

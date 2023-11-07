@@ -1,8 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+//*Libraries Import
 import { useEffect, useState } from 'react'
-import validateActivityData from './validateActivityData'
 import axios from 'axios'
+//* C Import
 import style from "./activities.module.css"
+//* Component Import
+import validateActivityData from './validateActivityData'
 import PopOutWindow from '../PopOutWindow/PopOutWindow'
 
 const CreateActivity = () => {
@@ -34,7 +37,7 @@ const CreateActivity = () => {
             return ()=>{
                 setTransition(false)
                 
-                setTimeout(()=>{console.log(transition)},5000)
+                
             }
     }, [countries]);
 
@@ -87,7 +90,6 @@ const CreateActivity = () => {
 
       const openPopOut = () => {
         setPopOutWindow(true);
-        console.log(popMessage)
       };
 
       const closePopOut = () => {

@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
+//* Libraries Import
 import { useEffect, useState } from "react"
 import { search } from "../../redux/actions"
-//* CSS 
-
-import style from "./SearchBar.module.css"
 import { useDispatch } from "react-redux"
+//* CSS import
+import style from "./SearchBar.module.css"
 
 const SearchBar = ({ onClear, onSearch, searchStatus }) => {
     const [name, setName] = useState("")

@@ -17,13 +17,6 @@
     transform: translate3d(200%,0,0);
     opacity: 0;
   }
-  
-  /* @keyframes slide-out {
-    to {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-  } */
 
   .content{
     position: relative;

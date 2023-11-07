@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
-import style from "./FilterBar.module.css"
+//* Libraries Import
 import { useState } from "react"
+
 
 
 const FilterBar = (props) => {
@@ -14,7 +15,7 @@ const FilterBar = (props) => {
   };
 
   return (
-    <div className={style.filters}>
+    <div>
                 <select id="select" value={filterVal} onChange={(event)=>{handleFilter(event)}}>
                   <option value="All">All</option>
                   <option value="Africa">Africa</option>

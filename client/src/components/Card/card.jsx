@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 //* CSS Import
-// import Detail from "../DetailCountry/Detail"
 import style from "./card.module.css"
-//* Libraries
-// import {Link} from "react-router-dom"
+
 
 const Card = (props) => {
     const {id, name, continent, flag, detailID, status} = props

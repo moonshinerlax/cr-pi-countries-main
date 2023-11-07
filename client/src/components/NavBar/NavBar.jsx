@@ -2,7 +2,7 @@
 import {Link} from "react-router-dom"
 //* CSS
 import style from "./NavBar.module.css"
-//* Components
+//* Helper
 import PATHROUTES from "../../helpers/PATHROUTES"
 
 const NavBar = ()=>{

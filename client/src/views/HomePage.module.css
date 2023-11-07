@@ -14,12 +14,6 @@
   transition: transform 0.5s cubic-bezier(0, 0, 1, 1);
 }
 
-.slideOut {
-  transform: translate3d(-100%, 0, 0);
-  opacity: 0;
-  transition: transform 0.5s cubic-bezier(0, 0, 1, 1);
-}
-
   .pageNav{
     display: flex;
     grid-row: 1;
