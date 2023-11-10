@@ -1,15 +1,17 @@
 //* Libraries
-import {Link} from "react-router-dom"
+import {Link, useLocation } from "react-router-dom"
 //* CSS
 import style from "./NavBar.module.css"
 //* Helper
 import PATHROUTES from "../../helpers/PATHROUTES"
 
 const NavBar = ()=>{
+    const path = useLocation()
+    
     return(
 <div className={style.navBar}>
-            <Link className={style.NavButton} to={PATHROUTES.HOME}><img className={style.svg} src="./src/images/home_FILL0_wght400_GRAD0_opsz24.svg" /></Link>
-            <Link className={style.NavButton} to={PATHROUTES.ACTIVITIES}><img className={style.svg} src="./src/images/forest_FILL0_wght400_GRAD0_opsz24.svg" /></Link>
+            <Link className={`${style.NavButton} ${path.pathname === "/home" ? style.active : ''}`} to={PATHROUTES.HOME}>Home</Link>
+            <Link className={`${style.NavButton} ${path.pathname === "/activities" ? style.active : ''}`} to={PATHROUTES.ACTIVITIES}>Activities</Link>
         </div>
     )
 }

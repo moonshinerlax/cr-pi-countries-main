@@ -12,12 +12,13 @@
   color: rgb(36 56 78);
   background-image: url(../src/images/CloudsbyIvanNava.png);
   background-size: contain;
-  background-color: #F6F4F2;
+  background-color: #dee0df;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  background-blend-mode: soft-light;
 }
 
 a {

@@ -8,7 +8,7 @@
     cursor: pointer;
 }
 .cardcontainer:hover{
-    box-shadow: 0px 0px 6px rgba(121, 255, 63,1)
+    box-shadow: 0 0 3px hsla(260, 100%, 70%, 0.7)
 }
 
 .cardcontainer img {
