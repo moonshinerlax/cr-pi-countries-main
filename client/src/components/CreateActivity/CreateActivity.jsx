@@ -100,18 +100,22 @@ const CreateActivity = () => {
     <form className={`${style.formContainer} ${transition ? style.slideIn : style.slideOut}`} onSubmit={handleSubmit}>
                 <h1 className={style.title}>Activity Creation</h1>
             <div className={style.labelContainer}>
+                <div className={style.labelBox}>
                 <label className={style.label} htmlFor='name'>Activity Name</label>
                 <input className={style.input} type='text' name='name' value={activityData.name} onChange={handleOnChange}></input>
                 <span className={style.error} >{errors.name}</span>
-            
+                </div>
+                <div className={style.labelBox}>
                 <label className={style.label} htmlFor='difficulty'>Assign difficulty</label>
                 <input className={style.input} type='number'  min="1" max="5" name='difficulty' value={activityData.difficulty} onChange={handleOnChange}></input>
                 <span className={style.error}>{errors.difficulty}</span>
-            
+                </div>
+                <div className={style.labelBox}>
                 <label className={style.label} htmlFor='duration'>Duration</label>
                 <input className={style.input} type='time'  name='duration' value={activityData.duration} onChange={handleOnChange}></input>
                 <span className={style.error}>{errors.duration}</span>
-            
+                </div>
+                <div className={style.labelBox}>
                 <label className={style.label} htmlFor='season'>Season</label>
                     <select className={style.input} value={activityData.season} name="season" onChange={handleOnChange} >
                         <option value="">Select a season</option>
@@ -121,7 +125,8 @@ const CreateActivity = () => {
                         <option value="Winter">Winter</option>
                     </select>
                 <span className={style.error}>{errors.season}</span>
-                     
+                </div>
+                <div className={style.labelBox}>    
                     <label className={style.label} htmlFor='countries'>Country</label>
                         <input 
                         className={style.input}
@@ -131,8 +136,9 @@ const CreateActivity = () => {
                         onChange={handleCountryChange}
                         placeholder="Add Country">
                         </input>
-                    <button type="button" onClick={handleAddCountry}>Add Country</button>
+                    <button className={style.button} type="button" onClick={handleAddCountry}>Add</button>
                     <span className={style.error}>{ errors.countries }</span>               
+                    </div>
             </div>
             <div>
                     <ul className={style.listCon}>

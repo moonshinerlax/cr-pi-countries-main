@@ -7,7 +7,6 @@ import PATHROUTES from './helpers/PATHROUTES'
 //* Components Imports
 import HomePage from './views/HomePage'
 import LandingPage from './views/LandingPage'
-import NavBar from './components/NavBar/NavBar'
 import Detail from './components/DetailCountry/Detail'
 import CreateActivity from './components/CreateActivity/CreateActivity'
 
@@ -19,7 +18,7 @@ function App() {
   
   return (
       <div className={style.root}>
-        {showNavBar && <NavBar/>}
+        {showNavBar && <CreateActivity/>}
        <Routes>
         <Route path={PATHROUTES.LOGIN} element={<LandingPage/>}/>
         <Route path={PATHROUTES.HOME} element={<HomePage/>}/>

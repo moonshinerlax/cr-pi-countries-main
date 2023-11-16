@@ -1,8 +1,9 @@
 .root {
   max-height: unset;
-  width: 100%;
-  display: grid;
+    width: 100%;
+    display: grid;
     justify-items: center;
+   
 }
 
 .filter{

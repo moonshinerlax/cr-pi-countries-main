@@ -69,8 +69,8 @@ const HomePage = ()=>{
       }
       
       return(
-        <div className={`${style.rootHome} ${transition ? style.slideIn : ""}` }>
-            <div className={style.head}>
+        <>
+        <div className={style.head}>
               <div className={style.filters}>
                 <FilterBar 
                   sendData={getFilterValue}
@@ -94,9 +94,10 @@ const HomePage = ()=>{
                   {page >= itemsNum/10 ? <a></a> : <button onClick={nextPage}>Next</button>}
               </div>
             </div>
+        <div className={`${style.rootHome} ${transition ? style.slideIn : ""}` }>
             <Cards countries={Countries}
             /> 
-        </div>
+        </div></>
     )
 }
 

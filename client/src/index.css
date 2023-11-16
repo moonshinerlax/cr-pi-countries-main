@@ -32,13 +32,13 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: flex-start; */
 }
 
 h1 {
