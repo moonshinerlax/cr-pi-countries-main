@@ -28,14 +28,15 @@ useEffect(()=>{
   return (
     <div>
         <div className={style.modalContent}>
+        <img className={style.background} src={country.background}></img>
         <a onClick={handleClose} className={style.close}>X</a>
-        <h3 >Name: {country.name}</h3>
-        <h3 >Continent: {country.continent}</h3>
+        <h3 className={style.text}>Name: {country.name}</h3>
+        <h3 className={style.text}>Continent: {country.continent}</h3>
         <img className={style.flag} src={country.flag} alt='' />
-        <h3>Capital: {country.capital}</h3>
-        <h3>Subregion: {country.subregion}</h3>
-        <h3>Area: {country.area} (Km²)</h3>
-        <h3>Population: {country.population}</h3>
+        <h3 className={style.text}>Capital: {country.capital}</h3>
+        <h3 className={style.text}>Subregion: {country.subregion}</h3>
+        <h3 className={style.text}>Area: {country.area} (Km²)</h3>
+        <h3 className={style.text}>Population: {country.population}</h3>
             <div className={style.activitiesContainer}>
             <h2>Activies</h2>
             {activities.length === 0 ? <><h2>No Activies have been uploaded</h2></> 

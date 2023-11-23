@@ -1,4 +1,5 @@
   .activitiesContainer{
+    z-index: 1;
     grid-column: 2;
     grid-row-start: 2;
     grid-row-end: 8;
@@ -6,12 +7,15 @@
     height: 550px;
     border: 1px solid #ccc;
     overflow: auto;
+    border-radius: 10px;
   }
   
   .modalContent {
+    z-index: 1;
     background: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    column-gap: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: grid;
   }
@@ -19,9 +23,12 @@
   .flag{
     border: solid 1px grey;
     grid-column: 1;
+    border-radius: 10px;
+    z-index: 1;
   }
 
   .close{
+    z-index: 1;
     cursor: pointer;
     grid-column: 2;
     grid-row: 1;
@@ -30,6 +37,7 @@
   }
 
   .actContent{
+    z-index: 1;
     margin: 10px;
     display: flex;
     align-self: start;
@@ -40,4 +48,16 @@
     align-content: center;
     align-items: flex-start;
     overflow: auto; 
+  }
+
+  .text{
+    z-index: 1;
+  }
+
+  .background{
+    position: fixed;
+    block-size: 500px;
+    justify-self: center;
+    align-self: center;
+    filter: opacity(0.1);
   }

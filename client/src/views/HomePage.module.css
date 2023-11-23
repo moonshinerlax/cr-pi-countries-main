@@ -1,12 +1,17 @@
 .rootHome {
   opacity: 0;
     width: 67%;
-    padding-top: 60px;
-    background: white;
+    padding-top: 5px;
+    background: #E4E4D0;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
     transform: translate3d(-100%, 0, 0);
     transition: transform 0.5s cubic-bezier(0, 0, 1, 1);
     justify-self: flex-end;
+    border-radius: 10px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .slideIn {
@@ -21,6 +26,7 @@
     grid-column: 3;
     align-items: center;
     justify-content: flex-end;
+    
   }
 
   .searchBar{
@@ -28,27 +34,19 @@
     grid-column: 2;
   }
 
-  .head{
-    display: grid;
-    justify-items: stretch;
-    grid-gap: 20px;
-    justify-self: flex-end;
-    width: 66%;
-    background-color: white;
-    position: fixed;
-    z-index: 1;
-  }
-
   .filters{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    grid-row: 1;
-    grid-column: 1;
   }
   .pageNum{
     margin: 5px;
     text-decoration: underline;
+    cursor: pointer;
   }
-
-  
+  .navButton{
+    width: 20px;
+  }
+  .title{
+    align-self: baseline;
+  }

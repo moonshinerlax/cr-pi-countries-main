@@ -16,7 +16,8 @@ const fillDB = async () =>{
                 capital:capital,
                 subregion:count.subregion,
                 area:count.area,
-                population: count.population
+                population: count.population,
+                background: count.coatOfArms.png
             })
         }
         console.log("database fill sucessfully")

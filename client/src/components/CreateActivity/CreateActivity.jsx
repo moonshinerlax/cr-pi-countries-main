@@ -5,7 +5,7 @@ import axios from 'axios'
 //* C Import
 import style from "./activities.module.css"
 //* Component Import
-import validateActivityData from './validateActivityData'
+import {validateActivityData, validateCountries} from './validateActivityData'
 import PopOutWindow from '../PopOutWindow/PopOutWindow'
 
 const CreateActivity = () => {
@@ -33,12 +33,7 @@ const CreateActivity = () => {
         setTimeout(()=>{
             setTransition(true)
         },0)
-        validateActivityData({ ...activityData, countries: countries }, errors, setErrors);
-            return ()=>{
-                setTransition(false)
-                
-                
-            }
+        validateCountries({ ...activityData, countries: countries }, errors, setErrors);
     }, [countries]);
 
     const handleSubmit = async (event) => {
@@ -73,10 +68,9 @@ const CreateActivity = () => {
 
       const handleAddCountry = () => {
         if (countryInput.trim() !== '' && !countries.includes(countryInput)) { 
-            setActivityData({ ...activityData, countries: [...countries, countryInput] })
             setCountries([...countries, countryInput]);
+            setActivityData({ ...activityData, countries: [...countries, countryInput] })
             setCountryInput("")
-            
         } else{validateActivityData({...activityData, countries: countries }, errors, setErrors);}
     };
 

@@ -10,15 +10,14 @@ import LandingPage from './views/LandingPage'
 import Detail from './components/DetailCountry/Detail'
 import CreateActivity from './components/CreateActivity/CreateActivity'
 
-
 function App() {
   
   const location = useLocation();
-  const showNavBar = location.pathname !== '/';
+  const activity = location.pathname !== '/';
   
   return (
       <div className={style.root}>
-        {showNavBar && <CreateActivity/>}
+        {activity && <CreateActivity/>}
        <Routes>
         <Route path={PATHROUTES.LOGIN} element={<LandingPage/>}/>
         <Route path={PATHROUTES.HOME} element={<HomePage/>}/>

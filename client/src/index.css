@@ -9,10 +9,9 @@
   line-height: 1.5;
   font-weight: 1000;
   color-scheme: light dark;
-  color: rgb(36 56 78);
-  background-image: url(../src/images/CloudsbyIvanNava.png);
+  color: #1B1B1B;
   background-size: contain;
-  background-color: #dee0df;
+  background-color: #94A684;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -92,7 +91,7 @@ button {
 
 button:hover {
   background: #F6F9FE;
-  color: #174ea6;
+  color: #94A684;
 }
 
 button:active {
@@ -102,7 +101,7 @@ button:active {
 
 button:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid #94A684;
 }
 
 button:not(:disabled) {
@@ -164,22 +163,22 @@ select{
     cursor: pointer;
     font-family: inherit;
     font-size: 16px;
-    color: rgb(36 56 78);
+    color: #1B1B1B;
     transition: all 150ms ease;}
     
     &:required:invalid{
       color: #5A667F}
 
     option{
-      color: rgb(36 56 78);}
+      color: #1B1B1B;}
       &[value=""][disabled]
           {display: none}
     
     &:focus{
       outline: none;
-      border-color: #0077FF;
-      box-shadow: 0 0 0 2px rgba(#0077FF,.2)}
+      border-color: #94A684;
+      box-shadow: 0 0 0 2px rgba(#94A684,.2)}
 
     &:hover{
-      stroke: #0077FF}
+      stroke: #94A684}
       

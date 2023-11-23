@@ -2,8 +2,10 @@
     color:red;
     margin: 5px;
     text-decoration: underline;
+    cursor: pointer;
 }
 .unactive{
     margin: 5px;
     text-decoration: underline;
+    cursor: pointer;
 }

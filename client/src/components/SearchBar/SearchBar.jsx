@@ -21,7 +21,6 @@ const SearchBar = ({ onClear, onSearch, searchStatus }) => {
     const handleSearch = ()=>{
         dispatch(search(name))
         onSearch()        
-        
     }
     const handleClear = ()=>{
         onClear()

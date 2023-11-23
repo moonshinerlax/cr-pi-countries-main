@@ -28,13 +28,10 @@ const Pagination = ({ totalItems, currentPage, onPageChange }) => {
     <div>
         {pageNumbers.map((pageNumber) => (
           <a
-
             key={pageNumber}
             onClick={() => handlePageClick(pageNumber)}
             className={pageNumber === currentPage ? style.active : style.unactive}
-          >
-            {pageNumber}
-          </a>
+            > {pageNumber} </a>
         ))}
       
     </div>
