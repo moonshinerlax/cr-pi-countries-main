@@ -9,7 +9,7 @@ import HomePage from './views/HomePage'
 import LandingPage from './views/LandingPage'
 import Detail from './components/DetailCountry/Detail'
 import CreateActivity from './components/CreateActivity/CreateActivity'
-
+//testing new commit
 function App() {
   
   const location = useLocation();
