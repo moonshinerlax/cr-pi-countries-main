@@ -7,8 +7,10 @@ import style from "./activities.module.css"
 //* Component Import
 import {validateActivityData, validateCountries} from './validateActivityData'
 import PopOutWindow from '../PopOutWindow/PopOutWindow'
+import { useSelector } from 'react-redux'
 
 const CreateActivity = () => {
+    const Countries = useSelector((state)=> state.countries2)
     const [transition, setTransition] = useState(false)
     const [popOutWindow, setPopOutWindow] = useState(false);
     const [popMessage, setPopMessage] = useState('')
@@ -112,7 +114,7 @@ const CreateActivity = () => {
                 <div className={style.labelBox}>
                 <label className={style.label} htmlFor='season'>Season</label>
                     <select className={style.input} value={activityData.season} name="season" onChange={handleOnChange} >
-                        <option value="">Select a season</option>
+                        <option value="" disabled>Select a season</option>
                         <option value="Spring">Spring</option>
                         <option value="Summer">Summer</option>
                         <option value="Fall">Fall</option>
@@ -122,14 +124,12 @@ const CreateActivity = () => {
                 </div>
                 <div className={style.labelBox}>    
                     <label className={style.label} htmlFor='countries'>Country</label>
-                        <input 
-                        className={style.input}
-                        value={countryInput}  
-                        type="text"
-                        name="countries"
-                        onChange={handleCountryChange}
-                        placeholder="Add Country">
-                        </input>
+                        <select name="Countries" className={style.selectCountries} value={countryInput} onChange={handleCountryChange}>
+                        <option value="" disabled>Select an option</option>
+                        {Countries.map((country)=>
+                        <option key={country.name} value={country.name}>{country.name}</option>
+                        )}
+                        </select>
                     <button className={style.button} type="button" onClick={handleAddCountry}>Add</button>
                     <span className={style.error}>{ errors.countries }</span>               
                     </div>

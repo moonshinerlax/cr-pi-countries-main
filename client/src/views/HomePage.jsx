@@ -11,8 +11,9 @@ import Cards from "../components/Cards/Cards";
 // import FilterBar from "../components/Bars/FilterBar";
 // import OrderBar from "../components/Bars/OrderBar";
 //* functions import
-import { fillList, filter } from "../redux/actions";
+import { clear, fillList, filter } from "../redux/actions";
 import NavBar from "../components/NavBar/NavBar";
+import { Link, useLocation } from "react-router-dom";
 
 const HomePage = ()=>{
     const Countries = useSelector((state)=> state.countries1)
@@ -27,19 +28,15 @@ const HomePage = ()=>{
 
     useEffect(()=>{
       dispatch(fillList())
+      setTransition(true);
     },[])
 
     useEffect(() => {
-      
-        setTimeout(() => {
-          setTransition(true);
-        }, 0); 
         dispatch(filter(page, filterBar))
-        
+        // dispatch(order(updateOrd))
       }
       , [page, filterBar, updateOrd, searchStatus]); 
       
-
   const handlePageChange = (selectedPage) => {
     setPage(selectedPage);
   };
@@ -65,14 +62,17 @@ const HomePage = ()=>{
         setSearchStatus(searchStatus + 1)
       }
       const handleClear = () => {
-        dispatch(fillList())
+        dispatch(clear())
         setSearchStatus(searchStatus - 1)
       }
       
+      const location = useLocation()
+      const home = location.pathname !== "/home"
+
       return(
         // <>
         // <div className={style.head}>
-        <div className={`${style.rootHome} ${transition ? style.slideIn : ""}` }>
+        <div className={`${style.rootHome} ${transition ? style.slideIn : ""} ${home ? style.slideSide : ""}` }>
         <NavBar
           className={style.filters}
           onSearch={handleSearch}
@@ -83,12 +83,15 @@ const HomePage = ()=>{
           onNextPage={nextPage}
           onPreviousPage={previousPage}
         />
-        
-            <h2 className={style.title}>World Countries</h2>
+            <div className={style.title}>
+            <Link to={"/home"}><h2 >World Countries</h2></Link>
+            <Link to={"/activities"}><h2>Create Activity</h2></Link>
+            </div>
             <Cards countries={Countries}
+            onClear={handleClear}
             /> 
         </div>
-        // </>
+       // </>
     )
 }
 

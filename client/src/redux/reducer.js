@@ -11,10 +11,9 @@ const initialState = {
           
         case "FILL":
         return { ...state, originalCountries: action.payload, countries2: action.payload};
-       
-        //   case "REMOVE_FAV":
-        // return { ...state, myFavorites: action.payload, countries2: action.payload };
-          
+        case "CLEAR":
+          const again = [...state.countries2]
+          return {...state, originalCountries: again}
         case "FILTER":
               const page = action.payload.page
               const continent = action.payload.continent
@@ -44,8 +43,7 @@ const initialState = {
             return 0;
           });
           const ascendingOrderPop = [...state.originalCountries].sort((a, b) => a.population - b.population);
-          const descendingOrderPop = [...state.originalCountries].sort((a, b) => b.population - a.population);
-          const defaultList = [...state.countries2]     
+          const descendingOrderPop = [...state.originalCountries].sort((a, b) => b.population - a.population);     
               if (action.payload === 'AName'){
                   return{...state, originalCountries: ascendingOrderName}
               } if (action.payload === 'BName'){
@@ -54,8 +52,6 @@ const initialState = {
                 return{...state, originalCountries: ascendingOrderPop}
               } if(action.payload === "BPop"){
                 return{...state, originalCountries: descendingOrderPop}
-              } if(action.payload === ""){
-                return{...state, originalCountries: defaultList}
               } else {return {...state}}
           case "SEARCH":
               return {...state, originalCountries: action.payload}

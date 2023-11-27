@@ -2,8 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  overflow: auto;
-  height: 750px;
   justify-content: space-evenly;
 }
 
@@ -27,4 +25,8 @@
   .detail.open {
     top:0;
     opacity: 1;
+  }
+  .box{
+    overflow: auto;
+    height: -webkit-fill-available;
   }

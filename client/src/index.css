@@ -1,7 +1,7 @@
 @font-face {
   font-family: "champange";
   src: local("champange.ttf"),
-  url("C:\Users\Aiven\Documents\cr-pi-countries-main\client\src\fonts\ChampagneBold.ttf");
+  url("C:\Users\Aiven\OneDrive\Documents\Henry School\P1 Project\cr-pi-countries-main\client\src\fonts\ChampagneBold.ttf");
 } 
 
 :root {
@@ -67,6 +67,7 @@ button {
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
+  font-family: champange;
   font-size: 14px;
   font-weight: 500;
   height: 29px;

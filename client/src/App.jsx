@@ -9,7 +9,7 @@ import HomePage from './views/HomePage'
 import LandingPage from './views/LandingPage'
 import Detail from './components/DetailCountry/Detail'
 import CreateActivity from './components/CreateActivity/CreateActivity'
-//testing new commit
+
 function App() {
   
   const location = useLocation();
@@ -17,7 +17,7 @@ function App() {
   
   return (
       <div className={style.root}>
-        {activity && <CreateActivity/>}
+        {activity && <HomePage/>}
        <Routes>
         <Route path={PATHROUTES.LOGIN} element={<LandingPage/>}/>
         <Route path={PATHROUTES.HOME} element={<HomePage/>}/>

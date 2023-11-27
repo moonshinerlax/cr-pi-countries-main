@@ -14,7 +14,15 @@ export const fillList = () => {
       }
     };
   };
-  
+export const clear = ()=>{
+  return (dispatch) =>{
+    dispatch({
+      type: "CLEAR"
+    }
+    )
+  }
+}
+
 export const filter = (page, continent) =>{
     return async (dispatch) => {
         try {

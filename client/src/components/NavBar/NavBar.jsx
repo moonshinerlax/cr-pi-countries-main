@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import {useDispatch, useSelector} from "react-redux"
 import { useState } from "react";
@@ -12,13 +13,14 @@ import FilterBar from "../Bars/FilterBar";
 import { fillList } from "../../redux/actions";
 
 
+
 const NavBar = ({onSearch, onClear, filterVal, orderVal, onPageChange, onPreviousPage, onNextPage})=>{
     const items = useSelector((state)=> state.pageItems)
     const [page, setPage] = useState(1)
     const dispatch = useDispatch()
     const [searchStatus, setSearchStatus] = useState(false)
     const itemsNum = items.length
-    
+
     const handlePageChange = (selectedPage) => {
         setPage(selectedPage);
         onPageChange(selectedPage)
@@ -35,10 +37,12 @@ const NavBar = ({onSearch, onClear, filterVal, orderVal, onPageChange, onPreviou
     
           const getFilterValue = (data)=>{
           filterVal(data)
+          setPage(1)
           }
     
           const updateOrder = (data) =>{
             orderVal(data)
+            setPage(1)
           }
     
           const handleSearch = () => {
@@ -54,7 +58,7 @@ const NavBar = ({onSearch, onClear, filterVal, orderVal, onPageChange, onPreviou
 
     return(
         <div className={style.filters}>
-            <div className={style.filters}>
+            <div className={style.select}>
                 <FilterBar 
                   sendData={getFilterValue}
                 />

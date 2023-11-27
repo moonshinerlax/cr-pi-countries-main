@@ -20,7 +20,7 @@ const SearchBar = ({ onClear, onSearch, searchStatus }) => {
     }
     const handleSearch = ()=>{
         dispatch(search(name))
-        onSearch()        
+        onSearch()     
     }
     const handleClear = ()=>{
         onClear()
